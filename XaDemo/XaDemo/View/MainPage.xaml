@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XaDemo.View.MainPage"
+             Title="Hello XAML Page"
+             BackgroundColor="White"
+             Padding="10, 40, 10, 10"
+             BackgroundImage="http://7606-presscdn-0-74.pagely.netdna-cdn.com/wp-content/uploads/2016/04/Dubai-Restaurants-Directory-Yellow-Pages-Dubai-UAE.jpg">
+  <StackLayout>
+    <AbsoluteLayout HorizontalOptions="CenterAndExpand">
+      <BoxView Color="#C51F00"
+               AbsoluteLayout.LayoutBounds="0, 10, 460, 5"/>
+      <BoxView Color="#C51F00"
+               AbsoluteLayout.LayoutBounds="0, 20, 460, 5"/>
+      <BoxView Color="#C51F00"
+               AbsoluteLayout.LayoutBounds="10, 0, 5, 100"/>
+      <BoxView Color="#C51F00"
+               AbsoluteLayout.LayoutBounds="20, 0, 5, 100"/>
+
+      <Label Text="Find Restaurant!"
+             VerticalOptions="CenterAndExpand"
+             HorizontalTextAlignment="Center"
+             FontSize="60"
+             FontAttributes="Italic"
+             TextColor="Black"
+             AbsoluteLayout.LayoutBounds="30,25"/>
+    </AbsoluteLayout>
+    <Label VerticalOptions="CenterAndExpand"/>
+    <Button Text="Go"
+            TextColor="Black"
+            HorizontalOptions="Center"
+            VerticalOptions="CenterAndExpand"
+            Font="Large"
+            BorderWidth="3"
+            BorderColor="White"
+            FontAttributes="Bold"
+            BackgroundColor="Green"
+            BorderRadius="10"
+            x:Name="FindBtn"
+                />
+
+  </StackLayout>
+  
+</ContentPage>
