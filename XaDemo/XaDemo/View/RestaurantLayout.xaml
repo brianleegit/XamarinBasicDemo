@@ -2,6 +2,17 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="XaDemo.View.RestaurantLayout">
+  <Grid RowSpacing="0">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="*" />
+    </Grid.RowDefinitions>
+  <ActivityIndicator Grid.RowSpan="2"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center"
+                       IsVisible="False"
+                       IsEnabled="True"
+                       x:Name="syncIndicator"/>
   <StackLayout Orientation="Vertical" Padding="20">
     <ScrollView  Orientation = "Vertical" VerticalOptions="StartAndExpand">
       <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand">
@@ -14,11 +25,13 @@
         <Label Text="真正的餐廳類別" x:Name="Restaurant_type" TextColor="#3D37ED" FontSize="24"/>
 
         <Label Text="地點" TextColor="#8886B5" FontSize="16" Margin="0,0,0,-10"/>
-        <Label Text="真正的地點" x:Name="Restaurant_location" TextColor="#3D37ED" FontSize="24"/>
+        <Label Text="真正的點" x:Name="Restaurant_location" TextColor="#3D37ED" FontSize="24"/>
 
         <Label Text="備註" TextColor="#8886B5" FontSize="16" Margin="0,0,0,-10"/>
         <Label Text="真正的備註" x:Name="Restaurant_note" TextColor="#3D37ED" FontSize="24"/>
+       
       </StackLayout>
     </ScrollView>
   </StackLayout>
+  </Grid>
 </ContentPage>
