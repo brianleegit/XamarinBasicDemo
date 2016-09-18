@@ -30,6 +30,7 @@ namespace XaDemo.Services
                 new Restaurant("KFC", "Tainan", "The Best Fried Chicked", "Fast Food"),
                 new Restaurant("Subway", "Tainan", "Good Salad", "Fast Food")
             };
+
             foreach (var res in resList)
             {
                 await restaurants.InsertAsync(res);
