@@ -28,7 +28,6 @@ namespace XaDemo.View
 
             restaurant = new RestaurantManager();
 
-            //HI  
             generateData(true);
 
             //Restaurant_name.Text = user.Name;
