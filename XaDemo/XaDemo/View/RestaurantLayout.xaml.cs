@@ -27,8 +27,10 @@ namespace XaDemo.View
             //var user = restaurant[rand.next(restaurant.count)];
 
             restaurant = new RestaurantManager();
+
             //HI  
             generateData(true);
+
             //Restaurant_name.Text = user.Name;
             //Restaurant_type.Text = user.Type;
             //Restaurant_location.Text = user.Location;
@@ -75,6 +77,7 @@ namespace XaDemo.View
             {
                 this.indicator.IsVisible = isActive;
                 this.indicator.IsRunning = isActive;
+                
             }
 
             public void Dispose()

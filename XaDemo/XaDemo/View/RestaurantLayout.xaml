@@ -13,6 +13,7 @@
                        IsVisible="False"
                        IsEnabled="True"
                        x:Name="syncIndicator"/>
+    
   <StackLayout Orientation="Vertical" Padding="20">
     <ScrollView  Orientation = "Vertical" VerticalOptions="StartAndExpand">
       <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand">
@@ -33,5 +34,6 @@
       </StackLayout>
     </ScrollView>
   </StackLayout>
-  </Grid>
+    
+    </Grid>
 </ContentPage>
