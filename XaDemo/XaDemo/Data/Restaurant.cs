@@ -8,7 +8,7 @@ namespace XaDemo.Data
 {
     class Restaurant
     {
-        public string Id;
+        public string Id { get; private set; }
         [JsonProperty(PropertyName = "Name")]
         public string Name { get; private set; }
         [JsonProperty(PropertyName = "Location")]
