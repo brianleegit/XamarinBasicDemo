@@ -27,7 +27,7 @@ namespace XaDemo.View
             //var user = restaurant[rand.next(restaurant.count)];
 
             restaurant = new RestaurantManager();
-            //HI
+            //HI  
             generateData(true);
             //Restaurant_name.Text = user.Name;
             //Restaurant_type.Text = user.Type;
