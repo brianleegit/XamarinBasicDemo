@@ -14,17 +14,28 @@
     <ScrollView  Orientation = "Vertical" VerticalOptions="StartAndExpand">
       <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand">
         <Image x:Name="Restaurant_img" />
-
-        <Label Text="餐廳名稱" TextColor="#8886B5" FontSize="16" Margin="0,0,0,-10"/>
+        <StackLayout Orientation="Horizontal" VerticalOptions="FillAndExpand" Margin="0,0,0,-10">
+          <Image Source="assignment.png" />
+          <Label Text="餐廳名稱" TextColor="#3D474A" FontSize="16"/>
+        </StackLayout>
         <Label Text="Loading..." x:Name="Restaurant_name" TextColor="#3D37ED" FontSize="24" Margin="0,0,0,0"/>
-
-        <Label Text="餐廳類別" TextColor="#8886B5" FontSize="16" Margin="0,0,0,-10"/>
+        
+        <StackLayout Orientation="Horizontal" VerticalOptions="FillAndExpand" Margin="0,0,0,-10">
+          <Image Source="label.png" />
+          <Label Text="餐廳類別" TextColor="#3D474A" FontSize="16"/>
+        </StackLayout>
         <Label Text="Loading..." x:Name="Restaurant_type" TextColor="#3D37ED" FontSize="24"/>
 
-        <Label Text="地點" TextColor="#8886B5" FontSize="16" Margin="0,0,0,-10"/>
+        <StackLayout Orientation="Horizontal" VerticalOptions="FillAndExpand" Margin="0,0,0,-10">
+          <Image Source="location.png" />
+          <Label Text="地點" TextColor="#3D474A" FontSize="16"/>
+        </StackLayout>
         <Label Text="Loading..." x:Name="Restaurant_location" TextColor="#3D37ED" FontSize="24"/>
 
-        <Label Text="備註" TextColor="#8886B5" FontSize="16" Margin="0,0,0,-10"/>
+        <StackLayout Orientation="Horizontal" VerticalOptions="FillAndExpand" Margin="0,0,0,-10">
+          <Image Source="note.png" />
+          <Label Text="備註" TextColor="#3D474A" FontSize="16"/>
+        </StackLayout>
         <Label Text="Loading..." x:Name="Restaurant_note" TextColor="#3D37ED" FontSize="24"/>
        
       </StackLayout>
