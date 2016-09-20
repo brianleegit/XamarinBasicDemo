@@ -31,12 +31,20 @@ namespace XaDemo.View
         {
             using (var scope = new ActivityIndicatorScope(syncIndicator, true))
             {
-                Object choose = await restaurant.GetRandomRestaurant();
-                Restaurant chooseRestaurant = (Restaurant)choose;
-                Restaurant_name.Text = chooseRestaurant.Name;
-                Restaurant_type.Text = chooseRestaurant.Type;
-                Restaurant_location.Text = chooseRestaurant.Location;
-                Restaurant_note.Text = chooseRestaurant.Description;
+                try
+                {
+                    Object choose = await restaurant.GetRandomRestaurant();
+                    Restaurant chooseRestaurant = (Restaurant)choose;
+                    Restaurant_name.Text = chooseRestaurant.Name;
+                    Restaurant_type.Text = chooseRestaurant.Type;
+                    Restaurant_location.Text = chooseRestaurant.Location;
+                    Restaurant_note.Text = chooseRestaurant.Description;
+                }
+                catch(Exception e)
+                {
+                    await DisplayAlert("網路連線", "請連線網路後繼續", "確定");
+                }
+              
             }
             
         }
