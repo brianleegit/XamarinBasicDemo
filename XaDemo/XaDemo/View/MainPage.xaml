@@ -2,11 +2,15 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="XaDemo.View.MainPage"
-             Title="Hello XAML Page"
-             BackgroundColor="White"
+             
              Padding="10, 40, 10, 10"
-             BackgroundImage="http://7606-presscdn-0-74.pagely.netdna-cdn.com/wp-content/uploads/2016/04/Dubai-Restaurants-Directory-Yellow-Pages-Dubai-UAE.jpg">
+             BackgroundColor="#D2CCA1">
   <StackLayout>
+    
+      <Image x:Name="CoverImage"
+             HorizontalOptions="Center"
+             VerticalOptions="CenterAndExpand"/>    
+    
     <AbsoluteLayout HorizontalOptions="CenterAndExpand">
       <BoxView Color="#C51F00"
                AbsoluteLayout.LayoutBounds="0, 10, 460, 5"/>
@@ -34,8 +38,10 @@
             BorderWidth="3"
             BorderColor="White"
             FontAttributes="Bold"
-            BackgroundColor="Green"
+            BackgroundColor="#65532F"
             BorderRadius="10"
+            WidthRequest="100"
+            HeightRequest="80"
             x:Name="FindBtn"
                 />
 

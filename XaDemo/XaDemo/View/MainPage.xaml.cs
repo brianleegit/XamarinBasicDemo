@@ -14,7 +14,9 @@ namespace XaDemo.View
 		{
 			InitializeComponent ();
             FindBtn.Clicked += OnFindBtnClicked;
-		}
+            
+            CoverImage.Source = ImageSource.FromUri(new Uri("https://cdn2.iconfinder.com/data/icons/mixed-1st-volume/512/Food-128.png"));
+        }
         private async void OnFindBtnClicked(object sender, EventArgs e)
         {
             // Page appearance not animated
