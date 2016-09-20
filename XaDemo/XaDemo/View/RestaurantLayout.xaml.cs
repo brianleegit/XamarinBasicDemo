@@ -29,8 +29,11 @@ namespace XaDemo.View
         }
         public async void showRestaurant()
         {
-
-             Object choose = await restaurant.GetRandomRestaurant();
+             var scope = new ActivityIndicatorScope(syncIndicator, true);
+            syncIndicator.IsVisible = true;
+            syncIndicator.IsRunning = true;
+       
+            Object choose = await restaurant.GetRandomRestaurant();
              Restaurant chooseRestaurant = (Restaurant)choose;
              Restaurant_name.Text = chooseRestaurant.Name;
              Restaurant_type.Text = chooseRestaurant.Type;
