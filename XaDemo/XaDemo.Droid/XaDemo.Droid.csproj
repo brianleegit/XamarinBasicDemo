@@ -155,7 +155,7 @@
     <AndroidResource Include="Resources\Drawable\test.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\Drawable\Restaurant-50.png" />
+    <AndroidResource Include="Resources\Drawable\Restaurant50.png" />
   </ItemGroup>
   <Import Project="..\XaDemo\XaDemo.projitems" Label="Shared" Condition="Exists('..\XaDemo\XaDemo.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
