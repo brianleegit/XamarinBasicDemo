@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             BackgroundColor="White"
              x:Class="XaDemo.View.RestaurantLayout">
   <Grid RowSpacing="0">
     <Grid.RowDefinitions>
@@ -15,22 +16,23 @@
         <Image x:Name="Restaurant_img" />
 
         <Label Text="餐廳名稱" TextColor="#8886B5" FontSize="16" Margin="0,0,0,-10"/>
-        <Label Text="真正的餐廳名稱" x:Name="Restaurant_name" TextColor="#3D37ED" FontSize="24" Margin="0,0,0,0"/>
+        <Label Text="Loading..." x:Name="Restaurant_name" TextColor="#3D37ED" FontSize="24" Margin="0,0,0,0"/>
 
         <Label Text="餐廳類別" TextColor="#8886B5" FontSize="16" Margin="0,0,0,-10"/>
-        <Label Text="真正的餐廳類別" x:Name="Restaurant_type" TextColor="#3D37ED" FontSize="24"/>
+        <Label Text="Loading..." x:Name="Restaurant_type" TextColor="#3D37ED" FontSize="24"/>
 
         <Label Text="地點" TextColor="#8886B5" FontSize="16" Margin="0,0,0,-10"/>
-        <Label Text="真正的點" x:Name="Restaurant_location" TextColor="#3D37ED" FontSize="24"/>
+        <Label Text="Loading..." x:Name="Restaurant_location" TextColor="#3D37ED" FontSize="24"/>
 
         <Label Text="備註" TextColor="#8886B5" FontSize="16" Margin="0,0,0,-10"/>
-        <Label Text="真正的備註" x:Name="Restaurant_note" TextColor="#3D37ED" FontSize="24"/>
+        <Label Text="Loading..." x:Name="Restaurant_note" TextColor="#3D37ED" FontSize="24"/>
        
       </StackLayout>
     </ScrollView>
   </StackLayout>
     <ActivityIndicator Grid.RowSpan="2"
                     HorizontalOptions="Center"
+                    Color="Red"
                     VerticalOptions="Center"
                     IsVisible="False"
                     IsEnabled="True"
