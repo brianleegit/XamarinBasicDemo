@@ -103,6 +103,7 @@
     <Content Include="Assets\StoreLogo.scale-240.png" />
     <Content Include="Assets\WideLogo.scale-240.png" />
     <Content Include="assignment.png" />
+    <Content Include="hourglass.png" />
     <Content Include="label.png" />
     <Content Include="location.png" />
     <Content Include="note.png" />
