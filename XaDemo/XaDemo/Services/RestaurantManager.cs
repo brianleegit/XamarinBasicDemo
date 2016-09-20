@@ -4,6 +4,7 @@ using System.Text;
 using XaDemo.Data;
 using Microsoft.WindowsAzure.MobileServices;
 using System.Threading.Tasks;
+using System.Collections;
 
 namespace XaDemo.Services
 {
@@ -11,17 +12,19 @@ namespace XaDemo.Services
     {
         IMobileServiceTable<Restaurant> restaurants;
         MobileServiceClient client;
-
+       
         public RestaurantManager()
         {
             this.client = new MobileServiceClient(Constants.ApplicationURL);
             this.restaurants = client.GetTable<Restaurant>();
+            
         }
 
         public MobileServiceClient CurrentClient
         {
             get { return client; }
         }
+     
         public async Task GenerateRandomData()
         {
             List<Restaurant> resList = new List<Restaurant> {
@@ -37,5 +40,12 @@ namespace XaDemo.Services
             }            
         }
 
+        public async Task<Object> GetRandomRestaurant()
+        {
+            // sort by name
+            var allRestaruant = await restaurants.OrderBy(r => r.Name).ToListAsync();
+            var rand = new Random();
+            return allRestaruant[rand.Next(allRestaruant.Count)];
+        }
     }
 }

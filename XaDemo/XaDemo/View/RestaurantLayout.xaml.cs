@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using XaDemo.Data;
 using Xamarin.Forms;
 using XaDemo.Services;
+using System.Collections;
 
 namespace XaDemo.View
 {
@@ -16,32 +17,27 @@ namespace XaDemo.View
         public RestaurantLayout ()
 		{
 			InitializeComponent ();
-            // Restaurant_name.Text = "麥當勞";
-
-            // 測試資料
-            //list<restaurant> restaurant = new list<restaurant> {
-            //    new restaurant ("麥當勞", "高雄市鹽埕區大勇路110號", "經營多年的經典快餐連鎖店，主營漢堡，薯條和奶昔。","速食餐廳"),
-            //    new restaurant ("麥當勞2", "高雄市鹽埕區大勇路111號", "經營多年的經典快餐連鎖店，主營漢堡，薯條和奶昔。","速食餐廳")
-            //};
-            //var rand = new random();
-            //var user = restaurant[rand.next(restaurant.count)];
+          
 
             restaurant = new RestaurantManager();
-
-            generateData(true);
-
-            //Restaurant_name.Text = user.Name;
-            //Restaurant_type.Text = user.Type;
-            //Restaurant_location.Text = user.Location;
-            //Restaurant_note.Text = user.Description;
-
-
-            Restaurant_img.Source = ImageSource.FromUri(new Uri("http://i.imgur.com/0j3D4Gp.png"));
+            showRestaurant();
+          //  generateData(true);
+           // Restaurant_img.Source = ImageSource.FromUri(new Uri("http://i.imgur.com/0j3D4Gp.png"));
             
             //Restaurant_img.Aspect = Aspect.AspectFit;
             //Restaurant_img.Source = ImageSource.FromFile("mac.png");
         }
-        
+        public async void showRestaurant()
+        {
+
+             Object choose = await restaurant.GetRandomRestaurant();
+             Restaurant chooseRestaurant = (Restaurant)choose;
+             Restaurant_name.Text = chooseRestaurant.Name;
+             Restaurant_type.Text = chooseRestaurant.Type;
+             Restaurant_location.Text = chooseRestaurant.Location;
+             Restaurant_note.Text = chooseRestaurant.Description;
+            
+        }
         public async void generateData(bool showActivityIndicator)
         {
             using (var scope = new ActivityIndicatorScope(syncIndicator, showActivityIndicator))
@@ -49,7 +45,7 @@ namespace XaDemo.View
                 await restaurant.GenerateRandomData();
             }
         }
-
+      
         private class ActivityIndicatorScope : IDisposable
         {
             private bool showIndicator;
