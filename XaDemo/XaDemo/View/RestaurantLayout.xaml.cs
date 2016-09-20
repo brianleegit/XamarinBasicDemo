@@ -21,9 +21,10 @@ namespace XaDemo.View
 
             restaurant = new RestaurantManager();
             showRestaurant();
-          //  generateData(true);
-           Restaurant_img.Source = ImageSource.FromUri(new Uri("http://i.imgur.com/0j3D4Gp.png"));
-            
+            //  generateData(true);
+            // Restaurant_img.Source = ImageSource.FromUri(new Uri("http://i.imgur.com/0j3D4Gp.png"));
+            Restaurant_img.Source = ImageSource.FromFile("hourglass.png");
+
             //Restaurant_img.Aspect = Aspect.AspectFit;
             //Restaurant_img.Source = ImageSource.FromFile("mac.png");
         }
