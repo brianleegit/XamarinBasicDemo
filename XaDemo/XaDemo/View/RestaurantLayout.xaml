@@ -7,12 +7,7 @@
       <RowDefinition Height="Auto" />
       <RowDefinition Height="*" />
     </Grid.RowDefinitions>
-  <ActivityIndicator Grid.RowSpan="2"
-                       HorizontalOptions="Center"
-                       VerticalOptions="Center"
-                       IsVisible="False"
-                       IsEnabled="True"
-                       x:Name="syncIndicator"/>
+
     
   <StackLayout Orientation="Vertical" Padding="20">
     <ScrollView  Orientation = "Vertical" VerticalOptions="StartAndExpand">
@@ -34,6 +29,11 @@
       </StackLayout>
     </ScrollView>
   </StackLayout>
-    
+    <ActivityIndicator Grid.RowSpan="2"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    IsVisible="False"
+                    IsEnabled="True"
+                    x:Name="syncIndicator"/>
     </Grid>
 </ContentPage>

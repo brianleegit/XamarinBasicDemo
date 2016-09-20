@@ -22,23 +22,22 @@ namespace XaDemo.View
             restaurant = new RestaurantManager();
             showRestaurant();
           //  generateData(true);
-           // Restaurant_img.Source = ImageSource.FromUri(new Uri("http://i.imgur.com/0j3D4Gp.png"));
+           Restaurant_img.Source = ImageSource.FromUri(new Uri("http://i.imgur.com/0j3D4Gp.png"));
             
             //Restaurant_img.Aspect = Aspect.AspectFit;
             //Restaurant_img.Source = ImageSource.FromFile("mac.png");
         }
         public async void showRestaurant()
         {
-             var scope = new ActivityIndicatorScope(syncIndicator, true);
-            syncIndicator.IsVisible = true;
-            syncIndicator.IsRunning = true;
-       
-            Object choose = await restaurant.GetRandomRestaurant();
-             Restaurant chooseRestaurant = (Restaurant)choose;
-             Restaurant_name.Text = chooseRestaurant.Name;
-             Restaurant_type.Text = chooseRestaurant.Type;
-             Restaurant_location.Text = chooseRestaurant.Location;
-             Restaurant_note.Text = chooseRestaurant.Description;
+            using (var scope = new ActivityIndicatorScope(syncIndicator, true))
+            {
+                Object choose = await restaurant.GetRandomRestaurant();
+                Restaurant chooseRestaurant = (Restaurant)choose;
+                Restaurant_name.Text = chooseRestaurant.Name;
+                Restaurant_type.Text = chooseRestaurant.Type;
+                Restaurant_location.Text = chooseRestaurant.Location;
+                Restaurant_note.Text = chooseRestaurant.Description;
+            }
             
         }
         public async void generateData(bool showActivityIndicator)
