@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,6 +16,7 @@ namespace XaDemo.View
             FindBtn.Clicked += OnFindBtnClicked;
             
             CoverImage.Source = ImageSource.FromUri(new Uri("https://cdn2.iconfinder.com/data/icons/mixed-1st-volume/512/Food-128.png"));
+         //   CoverImage.Aspect = Aspect.AspectFit;
         }
         private async void OnFindBtnClicked(object sender, EventArgs e)
         {

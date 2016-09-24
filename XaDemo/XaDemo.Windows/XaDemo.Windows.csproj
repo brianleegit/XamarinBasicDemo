@@ -125,9 +125,11 @@
     <Content Include="Assets\SmallLogo.scale-100.png" />
     <Content Include="Assets\SplashScreen.scale-100.png" />
     <Content Include="Assets\StoreLogo.scale-100.png" />
-    <Content Include="assignment.png" />
-    <Content Include="hourglass.png" />
-    <Content Include="label.png" />
+    <AndroidResource Include="assignment.png" />
+    <AndroidResource Include="hourglass.png" />
+    <AndroidResource Include="label.png" />
+    <AndroidResource Include="location.png" />
+    <AndroidResource Include="note.png" />
     <Content Include="Restaurant50.png" />
   </ItemGroup>
   <ItemGroup>

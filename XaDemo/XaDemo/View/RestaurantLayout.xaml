@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              BackgroundColor="White"
-             x:Class="XaDemo.View.RestaurantLayout">
+             x:Class="XaDemo.View.RestaurantLayout" >
   <Grid RowSpacing="0">
     <Grid.RowDefinitions>
       <RowDefinition Height="Auto" />
@@ -10,7 +10,7 @@
     </Grid.RowDefinitions>
 
     
-  <StackLayout Orientation="Vertical" Padding="20">
+  <StackLayout Orientation="Vertical" Padding="20" x:Name="ResultData">
     <ScrollView  Orientation = "Vertical" VerticalOptions="StartAndExpand">
       <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand">
         <Image x:Name="Restaurant_img" />
@@ -18,25 +18,25 @@
           <Image Source="assignment.png" />
           <Label Text="餐廳名稱" TextColor="#3D474A" FontSize="16"/>
         </StackLayout>
-        <Label Text="Loading..." x:Name="Restaurant_name" TextColor="#3D37ED" FontSize="24" Margin="0,0,0,0"/>
+        <Label Text="{Binding Name}" x:Name="Restaurant_name" TextColor="#3D37ED" FontSize="24" Margin="0,0,0,0"/>
         
         <StackLayout Orientation="Horizontal" VerticalOptions="FillAndExpand" Margin="0,0,0,-10">
           <Image Source="label.png" />
           <Label Text="餐廳類別" TextColor="#3D474A" FontSize="16"/>
         </StackLayout>
-        <Label Text="Loading..." x:Name="Restaurant_type" TextColor="#3D37ED" FontSize="24"/>
+        <Label Text="{Binding Type}" x:Name="Restaurant_type" TextColor="#3D37ED" FontSize="24"/>
 
         <StackLayout Orientation="Horizontal" VerticalOptions="FillAndExpand" Margin="0,0,0,-10">
           <Image Source="location.png" />
           <Label Text="地點" TextColor="#3D474A" FontSize="16"/>
         </StackLayout>
-        <Label Text="Loading..." x:Name="Restaurant_location" TextColor="#3D37ED" FontSize="24"/>
+        <Label Text="{Binding Location}" x:Name="Restaurant_location" TextColor="#3D37ED" FontSize="24"/>
 
         <StackLayout Orientation="Horizontal" VerticalOptions="FillAndExpand" Margin="0,0,0,-10">
           <Image Source="note.png" />
           <Label Text="備註" TextColor="#3D474A" FontSize="16"/>
         </StackLayout>
-        <Label Text="Loading..." x:Name="Restaurant_note" TextColor="#3D37ED" FontSize="24"/>
+        <Label Text="{Binding Description}" x:Name="Restaurant_note" TextColor="#3D37ED" FontSize="24"/>
        
       </StackLayout>
     </ScrollView>

@@ -21,7 +21,7 @@ namespace XaDemo.Data
 
        
 
-        public Restaurant(string name, string location, string description, string type = "")
+        public Restaurant(string name = "loading...", string location = "loading...", string description = "loading...", string type = "loading...")
         {
             Name = name;
             Location = location;

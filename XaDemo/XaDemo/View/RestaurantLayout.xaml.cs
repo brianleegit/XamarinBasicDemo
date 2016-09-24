@@ -12,12 +12,15 @@ namespace XaDemo.View
 {
 	public partial class RestaurantLayout : ContentPage
 	{
+        
         RestaurantManager restaurant;
 
         public RestaurantLayout ()
 		{
+
 			InitializeComponent ();
-          
+
+            ResultData.BindingContext = new Restaurant();
 
             restaurant = new RestaurantManager();
             showRestaurant();
@@ -35,11 +38,7 @@ namespace XaDemo.View
                 try
                 {
                     Object choose = await restaurant.GetRandomRestaurant();
-                    Restaurant chooseRestaurant = (Restaurant)choose;
-                    Restaurant_name.Text = chooseRestaurant.Name;
-                    Restaurant_type.Text = chooseRestaurant.Type;
-                    Restaurant_location.Text = chooseRestaurant.Location;
-                    Restaurant_note.Text = chooseRestaurant.Description;
+                    ResultData.BindingContext = (Restaurant)choose;
                 }
                 catch(Exception e)
                 {
