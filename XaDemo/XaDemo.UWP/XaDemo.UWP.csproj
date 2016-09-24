@@ -108,12 +108,12 @@
     <None Include="Windows_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="hourglass.png" />
+    <Content Include="hourglass.png" />
     <BundleResource Include="Assets\hourglass.png" />
-    <AndroidResource Include="location.png" />
-    <AndroidResource Include="note.png" />
-    <AndroidResource Include="assignment.png" />
-    <AndroidResource Include="label.png" />
+    <Content Include="location.png" />
+    <Content Include="note.png" />
+    <Content Include="assignment.png" />
+    <Content Include="label.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
