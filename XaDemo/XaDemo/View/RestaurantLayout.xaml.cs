@@ -35,9 +35,10 @@ namespace XaDemo.View
                     Object choose = await restaurant.GetRandomRestaurant();
                     ResultData.BindingContext = (Restaurant)choose;
                 }
-                catch(Exception e)
+                catch
                 {
                     await DisplayAlert("網路連線", "請連線網路後繼續", "確定");
+                    Navigation.RemovePage(Navigation.NavigationStack[1]);
                 }
               
             }

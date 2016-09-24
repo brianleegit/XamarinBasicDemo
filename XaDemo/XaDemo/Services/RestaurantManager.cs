@@ -44,6 +44,7 @@ namespace XaDemo.Services
         {
             // sort by name
             var allRestaruant = await restaurants.OrderBy(r => r.Name).ToListAsync();
+            
             var rand = new Random();
             return allRestaruant[rand.Next(allRestaruant.Count)];
         }
