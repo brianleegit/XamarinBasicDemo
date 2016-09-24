@@ -4,41 +4,37 @@
              x:Class="XaDemo.View.MainPage"
              
              Padding="10, 40, 10, 10"
-             BackgroundColor="#D2CCA1">
-  <StackLayout>
-    
-      <Image x:Name="CoverImage"
-             HorizontalOptions="Center"
-             VerticalOptions="CenterAndExpand"/>    
-    
-    <AbsoluteLayout HorizontalOptions="CenterAndExpand">
-      <BoxView Color="#C51F00"
-               AbsoluteLayout.LayoutBounds="0, 10, 460, 5"/>
-      <BoxView Color="#C51F00"
-               AbsoluteLayout.LayoutBounds="0, 20, 460, 5"/>
-      <BoxView Color="#C51F00"
-               AbsoluteLayout.LayoutBounds="10, 0, 5, 100"/>
-      <BoxView Color="#C51F00"
-               AbsoluteLayout.LayoutBounds="20, 0, 5, 100"/>
+             BackgroundColor="#EDEAD0">
 
-      <Label Text="Find Restaurant!"
-             VerticalOptions="CenterAndExpand"
-             HorizontalTextAlignment="Center"
-             FontSize="60"
-             FontAttributes="Italic"
-             TextColor="Black"
-             AbsoluteLayout.LayoutBounds="30,25"/>
-    </AbsoluteLayout>
+
+  <StackLayout>
+
+    <Image x:Name="CoverImage"
+           HorizontalOptions="Center"
+           VerticalOptions="CenterAndExpand"
+           WidthRequest="100"
+           HeightRequest="100"/>
+
+
+    <Label Text="Find Restaurant!"
+           VerticalOptions="CenterAndExpand"
+           HorizontalTextAlignment="Center"
+           FontSize="60"
+           FontAttributes="Italic"
+           TextColor="Black"
+           AbsoluteLayout.LayoutBounds="30,25"/>
+
+
     <Label VerticalOptions="CenterAndExpand"/>
     <Button Text="Go"
             TextColor="Black"
             HorizontalOptions="Center"
             VerticalOptions="CenterAndExpand"
-            Font="Large"
+            FontSize="20"
             BorderWidth="3"
             BorderColor="White"
             FontAttributes="Bold"
-            BackgroundColor="#65532F"
+            BackgroundColor="#EAD94C"
             BorderRadius="10"
             WidthRequest="100"
             HeightRequest="80"
@@ -46,5 +42,5 @@
                 />
 
   </StackLayout>
-  
+
 </ContentPage>
