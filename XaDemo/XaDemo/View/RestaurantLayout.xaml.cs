@@ -19,7 +19,7 @@ namespace XaDemo.View
 		{
 
 			InitializeComponent ();
-
+            ResultData.FadeTo(0, 0);
             ResultData.BindingContext = new Restaurant();
             restaurant = new RestaurantManager();
         //    generateData(true);
@@ -33,6 +33,7 @@ namespace XaDemo.View
                 try
                 {
                     Restaurant_img.Source = ImageSource.FromFile("hourglass.png");
+                    
                     Object choose = await restaurant.GetRandomRestaurant();
                     if (choose == null)
                     {
@@ -41,6 +42,8 @@ namespace XaDemo.View
                     }
                     ResultData.BindingContext = (Restaurant)choose;
                     Restaurant_img.Source = ImageSource.FromUri(new Uri(((Restaurant)choose).Image));
+                    
+                   
                 }
                 catch
                 {
@@ -49,8 +52,10 @@ namespace XaDemo.View
                 }
               
             }
-            
+            await ResultData.FadeTo(1, 1000);
         }
+
+       
         public async void generateData(bool showActivityIndicator)
         {
             using (var scope = new ActivityIndicatorScope(syncIndicator, showActivityIndicator))
