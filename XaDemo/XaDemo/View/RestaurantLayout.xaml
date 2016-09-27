@@ -13,7 +13,7 @@
   <StackLayout Orientation="Vertical" Padding="20" x:Name="ResultData">
     <ScrollView  Orientation = "Vertical" VerticalOptions="StartAndExpand">
       <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand">
-        <Image x:Name="Restaurant_img" />
+        <Image x:Name="Restaurant_img" Source="{Binding Image}"/>
         <StackLayout Orientation="Horizontal" VerticalOptions="FillAndExpand" Margin="0,0,0,-10">
           <Image Source="assignment.png" />
           <Label Text="餐廳名稱" TextColor="#3D474A" FontSize="16"/>

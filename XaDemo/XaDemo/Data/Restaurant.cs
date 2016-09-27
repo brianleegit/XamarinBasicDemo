@@ -18,15 +18,20 @@ namespace XaDemo.Data
         public string Description { get; private set; }
         [JsonProperty(PropertyName = "Type")]
         public string Type { get; private set; }
+        [JsonProperty(PropertyName = "Image")]
+        public string Image { get; private set; }
+        [JsonProperty(PropertyName = "School")]
+        public string School { get; private set; }
 
-       
 
-        public Restaurant(string name = "loading...", string location = "loading...", string description = "loading...", string type = "loading...")
+        public Restaurant(string name = "loading...", string location = "loading...", string description = "loading...", string type = "loading..." , string image = "null" , string school = "null")
         {
             Name = name;
             Location = location;
             Description = description;
             Type = type;
+            School = school;
+            Image = image;
         }
     }
 }

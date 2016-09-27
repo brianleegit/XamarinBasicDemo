@@ -22,9 +22,9 @@ namespace XaDemo.View
 
             ResultData.BindingContext = new Restaurant();
             restaurant = new RestaurantManager();
+        //    generateData(true);
+     
             showRestaurant();
-            Restaurant_img.Source = ImageSource.FromFile("hourglass.png");
-
         }
         public async void showRestaurant()
         {
@@ -32,8 +32,15 @@ namespace XaDemo.View
             {
                 try
                 {
+                    Restaurant_img.Source = ImageSource.FromFile("hourglass.png");
                     Object choose = await restaurant.GetRandomRestaurant();
+                    if (choose == null)
+                    {
+                        await DisplayAlert("找不到學校", "找不到學校QAQQQQQ", "確定");
+                        Navigation.RemovePage(Navigation.NavigationStack[1]);
+                    }
                     ResultData.BindingContext = (Restaurant)choose;
+                    Restaurant_img.Source = ImageSource.FromUri(new Uri(((Restaurant)choose).Image));
                 }
                 catch
                 {

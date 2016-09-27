@@ -17,6 +17,7 @@ namespace XaDemo.Services
         {
             this.client = new MobileServiceClient(Constants.ApplicationURL);
             this.restaurants = client.GetTable<Restaurant>();
+   
             
         }
 
@@ -28,7 +29,7 @@ namespace XaDemo.Services
         public async Task GenerateRandomData()
         {
             List<Restaurant> resList = new List<Restaurant> {
-                new Restaurant("Burger King", "Tainan", "Fast food for burger", "Fast Food"),
+                new Restaurant("Burger King", "Tainan", "Fast food for burger", "Fast Food" ),
                 new Restaurant("Mac Donald", "US", "Best Burger for American", "Fast Food"),
                 new Restaurant("KFC", "Tainan", "The Best Fried Chicked", "Fast Food"),
                 new Restaurant("Subway", "Tainan", "Good Salad", "Fast Food")
@@ -37,14 +38,15 @@ namespace XaDemo.Services
             foreach (var res in resList)
             {
                 await restaurants.InsertAsync(res);
+
             }            
         }
 
         public async Task<Object> GetRandomRestaurant()
         {
-            // sort by name
-            var allRestaruant = await restaurants.OrderBy(r => r.Name).ToListAsync();
-            
+            var allRestaruant = await restaurants.Where(r => r.School == Constants.SchoolID).ToListAsync();
+            if (allRestaruant.Count == 0)
+                return null;
             var rand = new Random();
             return allRestaruant[rand.Next(allRestaruant.Count)];
         }
