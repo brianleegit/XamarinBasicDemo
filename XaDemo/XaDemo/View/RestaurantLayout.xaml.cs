@@ -19,7 +19,7 @@ namespace XaDemo.View
 		{
 
 			InitializeComponent ();
-            ResultData.FadeTo(0, 0);
+     //       ResultData.FadeTo(0, 0);
             ResultData.BindingContext = new Restaurant();
             restaurant = new RestaurantManager();
         //    generateData(true);
@@ -42,7 +42,7 @@ namespace XaDemo.View
                     }
                     ResultData.BindingContext = (Restaurant)choose;
                     Restaurant_img.Source = ImageSource.FromUri(new Uri(((Restaurant)choose).Image));
-                    
+                    Restaurant_img.Aspect = Aspect.AspectFit;
                    
                 }
                 catch
