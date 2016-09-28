@@ -42,13 +42,14 @@ namespace XaDemo.Services
             }            
         }
 
+        //從資料庫抓資料
         public async Task<Object> GetRandomRestaurant()
         {
-            var allRestaruant = await restaurants.Where(r => r.School == Constants.SchoolID).ToListAsync();
+            var allRestaruant = await restaurants.Where(r => r.School == Constants.SchoolID).ToListAsync(); //抓符合學校ID的所有資料
             if (allRestaruant.Count == 0)
                 return null;
             var rand = new Random();
-            return allRestaruant[rand.Next(allRestaruant.Count)];
+            return allRestaruant[rand.Next(allRestaruant.Count)];   //回傳一筆隨機資料
         }
     }
 }
