@@ -4,6 +4,7 @@
              BackgroundColor="White"
              x:Class="XaDemo.View.RestaurantLayout" >
   <Grid RowSpacing="0">
+    
     <Grid.RowDefinitions>
       <RowDefinition Height="Auto" />
       <RowDefinition Height="*" />
@@ -13,8 +14,10 @@
   <StackLayout Orientation="Vertical" Padding="20" x:Name="ResultData">
     <ScrollView  Orientation = "Vertical" VerticalOptions="StartAndExpand">
       <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand">
-        <Image x:Name="Restaurant_img" Source="{Binding Image}"/>
+        <!--定義餐廳名稱，定義圖片來源-->
+        <Image x:Name="Restaurant_img" Source="{Binding Image}"/> 
         
+        <!--設定餐廳名稱外觀格式-->
         <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand" x:Name="TextData">
         <StackLayout Orientation="Horizontal" VerticalOptions="FillAndExpand" Margin="0,0,0,-10">
           <Image Source="assignment.png" />
