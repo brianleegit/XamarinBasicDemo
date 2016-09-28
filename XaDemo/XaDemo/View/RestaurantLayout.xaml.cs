@@ -20,50 +20,52 @@ namespace XaDemo.View
 
 			InitializeComponent ();
 
-            ResultData.BindingContext = new Restaurant();
-            restaurant = new RestaurantManager();
+            ResultData.BindingContext = new Restaurant();   //初始化欄位"loading..."
+            restaurant = new RestaurantManager();   //初始化
      
-            showRestaurant();
+            showRestaurant();   //讀取並顯示餐廳資料
         }
         public async void showRestaurant()
         {
-            using (var scope = new ActivityIndicatorScope(syncIndicator, true))
+            using (var scope = new ActivityIndicatorScope(syncIndicator, true))     //跑loading圈圈
             {
                 try
                 {
-                    Restaurant_img.Source = ImageSource.FromFile("hourglass.png");
+                    Restaurant_img.Source = ImageSource.FromFile("hourglass.png");  //顯示出loading圖片(沙漏)
                     
-                    Object choose = await restaurant.GetRandomRestaurant();
-                    if (choose == null)
+                    Object choose = await restaurant.GetRandomRestaurant();     //從資料庫隨機抓取一筆資料
+                    if (choose == null)   //防呆
                     {
                         await DisplayAlert("找不到學校", "找不到學校QAQQQQQ", "確定");
                         Navigation.RemovePage(Navigation.NavigationStack[1]);
                     }
-                    ResultData.BindingContext = (Restaurant)choose;
-                    Restaurant_img.Source = ImageSource.FromUri(new Uri(((Restaurant)choose).Image));
-                    Restaurant_img.Aspect = Aspect.AspectFit;
+                    ResultData.BindingContext = (Restaurant)choose;             //傳入資料
+                    Restaurant_img.Source = ImageSource.FromUri(new Uri(((Restaurant)choose).Image));   //從網路載入圖片
+                    Restaurant_img.Aspect = Aspect.AspectFit;                   //使圖片符合介面大小
                    
                 }
-                catch
+                //例外處理
+                catch      
                 {
                     await DisplayAlert("網路連線", "請連線網路後繼續", "確定");
                     Navigation.RemovePage(Navigation.NavigationStack[1]);
                 }
               
             }
-            await ResultData.FadeTo(1, 1000);
+         
         }
-
-       
-        public async void generateData(bool showActivityIndicator)
+               
+      /*  public async void generateData(bool showActivityIndicator)
         {
             using (var scope = new ActivityIndicatorScope(syncIndicator, showActivityIndicator))
             {
                 await restaurant.GenerateRandomData();
             }
         }
-      
-        private class ActivityIndicatorScope : IDisposable
+      */
+
+        //控制loading圈圈
+        private class ActivityIndicatorScope : IDisposable      
         {
             private bool showIndicator;
             private ActivityIndicator indicator;

@@ -13,36 +13,46 @@
     <StackLayout Orientation="Vertical" Padding="20" x:Name="ResultData">
         <ScrollView  Orientation = "Vertical" VerticalOptions="StartAndExpand">
           <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand">
+            <!--定義餐廳名稱，定義餐廳來源-->
             <Image x:Name="Restaurant_img" Source="{Binding Image}"/>
+            
+            <!--設定"餐廳名稱"外觀格式-->
             <StackLayout Orientation="Horizontal" VerticalOptions="FillAndExpand" Margin="0,0,0,-10">
               <Image Source="assignment.png" />
               <Label Text="餐廳名稱" TextColor="#3D474A" FontSize="16"/>
             </StackLayout>
+            <!--顯示餐廳名稱-->
             <Label Text="{Binding Name}" x:Name="Restaurant_name" TextColor="#3D37ED" FontSize="24" Margin="0,0,0,0"/>
-        
+            
+            <!--設定"餐廳類別"外觀格式-->
             <StackLayout Orientation="Horizontal" VerticalOptions="FillAndExpand" Margin="0,0,0,-10">
               <Image Source="label.png" />
               <Label Text="餐廳類別" TextColor="#3D474A" FontSize="16"/>
             </StackLayout>
+            <!--顯示餐廳類別-->
             <Label Text="{Binding Type}" x:Name="Restaurant_type" TextColor="#3D37ED" FontSize="24"/>
 
+            <!--設定"地點"外觀格式-->
             <StackLayout Orientation="Horizontal" VerticalOptions="FillAndExpand" Margin="0,0,0,-10">
               <Image Source="location.png" />
               <Label Text="地點" TextColor="#3D474A" FontSize="16"/>
             </StackLayout>
+            <!--顯示地點-->
             <Label Text="{Binding Location}" x:Name="Restaurant_location" TextColor="#3D37ED" FontSize="24"/>
 
+            <!--設定"描述"外觀格式-->
             <StackLayout Orientation="Horizontal" VerticalOptions="FillAndExpand" Margin="0,0,0,-10">
               <Image Source="note.png" />
-              <Label Text="備註" TextColor="#3D474A" FontSize="16"/>
+              <Label Text="描述" TextColor="#3D474A" FontSize="16"/>
             </StackLayout>
+            <!--顯示描述-->
             <Label Text="{Binding Description}" x:Name="Restaurant_note" TextColor="#3D37ED" FontSize="24"/>
-       
+          
+          </StackLayout>
+       </ScrollView>
+   </StackLayout>
     
-      </StackLayout>
-    </ScrollView>
-  </StackLayout>
-    
+    <!--設定loading圈圈格式-->
     <ActivityIndicator Grid.RowSpan="2"
                     HorizontalOptions="Center"
                     Color="Red"
