@@ -19,10 +19,9 @@ namespace XaDemo.View
 		{
 
 			InitializeComponent ();
-     //       ResultData.FadeTo(0, 0);
+
             ResultData.BindingContext = new Restaurant();
             restaurant = new RestaurantManager();
-        //    generateData(true);
      
             showRestaurant();
         }
